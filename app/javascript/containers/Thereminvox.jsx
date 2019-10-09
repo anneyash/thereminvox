@@ -1,4 +1,5 @@
 import React from "react";
+import Tone from "tone";
 
 export default class Thereminvox extends React.Component {
   constructor(props) {
@@ -30,6 +31,7 @@ export default class Thereminvox extends React.Component {
     this.changeFrequency = this.changeFrequency.bind(this);
     this.changeDetune = this.changeDetune.bind(this);
     this.changeVisualization = this.changeVisualization.bind(this);
+    this.handleSynthPlay = this.handleSynthPlay.bind(this);
   }
 
   componentDidMount() {
@@ -55,6 +57,22 @@ export default class Thereminvox extends React.Component {
     } else {
       this.handleStart();
     }
+  }
+
+  handleSynthPlay() {
+    let synth = new Tone.Synth().toMaster();
+    //synth.triggerAttackRelease("A4", "4n");
+
+    let pattern = new Tone.Pattern(
+      function(time, note) {
+        synth.triggerAttackRelease(note, "4n");
+      },
+      ["C4", "D4", "E4", "G4", "A4"]
+    );
+
+    pattern.start(0);
+    Tone.Transport.bpm.valye = 220;
+    Tone.Transport.start();
   }
 
   handleStart() {
@@ -143,8 +161,8 @@ export default class Thereminvox extends React.Component {
 
     return (
       <div>
+        <div onClick={this.handleSynthPlay}>Synth</div>
         <div onClick={this.handleStartOrStopClick}>{button}</div>
-
         <div className="analyser">{elements}</div>
       </div>
     );
