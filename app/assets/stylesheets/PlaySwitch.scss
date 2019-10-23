@@ -1,17 +1,33 @@
+.effectsBoard {
+  flex-direction: row;
+  display: flex;
+  padding: 60px;
+}
+
 .PlaySwitch {
   &.play {
     &.switchOn {
       width: 0;
       height: 0;
       border-style: solid;
-      border-width: 10px 0 10px 17.3px;
-      border-color: transparent transparent transparent #000000;
+      border-width: 15px 0 15px 26px;
+      border-color: transparent transparent transparent #fac93c;
+      margin-left: 75px;
+      margin-right: 75px;
+      margin-top: 125px;
+      flex-direction: row;
+      display: inline-block;
     }
 
     &.switchOff {
-      width: 20px;
-      height: 20px;
-      background: black;
+      display: inline-block;
+      flex-direction: row;
+      margin-left: 75px;
+      margin-right: 75px;
+      margin-top: 125px;
+      width: 30px;
+      height: 30px;
+      background: #083d99;
     }
   }
 }

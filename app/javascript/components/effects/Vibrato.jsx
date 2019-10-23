@@ -26,7 +26,7 @@ export default class Vibrato extends React.Component {
 
         <div className="controlsContainer">
           <div className="controlsRow">
-            <h2>Wet</h2>
+            <h2></h2>
 
             <Slider
               name={name}
@@ -37,7 +37,7 @@ export default class Vibrato extends React.Component {
             />
           </div>
           <div className="controlsRow">
-            <h2>Vibrato</h2>
+            <h2></h2>
             <Slider
               name={name}
               min="0"
