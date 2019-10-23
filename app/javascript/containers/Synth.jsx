@@ -5,6 +5,9 @@ import Tone from "tone";
 import PlaySwitch from "../components/PlaySwitch";
 import Distortion from "../components/effects/Distortion";
 import FeedbackDelay from "../components/effects/FeedbackDelay";
+import Reverb from "../components/effects/Reverb";
+import AutoWah from "../components/effects/AutoWah";
+import Vibrato from "../components/effects/Vibrato";
 
 export default class Synth extends React.Component {
   constructor(props) {
@@ -137,7 +140,7 @@ export default class Synth extends React.Component {
 
     let vibrato = new Tone.Vibrato({
       maxDelay: 0.005,
-      frequency: 5,
+      frequency: 100,
       depth: 0.1,
       type: "sine"
     });
@@ -337,7 +340,10 @@ export default class Synth extends React.Component {
       "toggleEffect",
       "changeEffectWetValue",
       "changeDistortionValue",
-      "changeFeedbackDelayValue"
+      "changeFeedbackDelayValue",
+      "changeReverbValue",
+      "changeAutoWahValue",
+      "changeVibrato"
     );
 
     Tone.Transport.bpm.value = 30;
@@ -441,6 +447,48 @@ export default class Synth extends React.Component {
     });
   }
 
+  changeReverbValue(effectName, value) {
+    let { effect, wet, on } = this.state.reverb;
+
+    effect.reverb = value;
+
+    this.setState({
+      reverb: {
+        effect,
+        wet,
+        on
+      }
+    });
+  }
+
+  changeAutoWahValue(effectName, value) {
+    let { effect, wet, on } = this.state.autoWah;
+
+    effect.maxWah = value;
+
+    this.setState({
+      autoWah: {
+        effect,
+        wet,
+        on
+      }
+    });
+  }
+
+  changeVibrato(effectName, value) {
+    let { effect, wet, on } = this.state.vibrato;
+
+    effect.vibrato = value;
+
+    this.setState({
+      vibrato: {
+        effect,
+        wet,
+        on
+      }
+    });
+  }
+
   render() {
     let { distortion, synth, loop1, loop2, loop3, loop4 } = this.state;
     let { toggleEffect } = this;
@@ -483,6 +531,24 @@ export default class Synth extends React.Component {
             toggleEffect={() => toggleEffect("feedbackDelay")}
             changeEffectWetValue={this.changeEffectWetValue}
             changeFeedbackDelayValue={this.changeFeedbackDelayValue}
+          />
+          <Reverb
+            {...this.state.reverb}
+            toggleEffect={() => toggleEffect("reverb")}
+            changeEffectWetValue={this.changeEffectWetValue}
+            changeReverbValue={this.changeReverbValue}
+          />
+          <AutoWah
+            {...this.state.autoWah}
+            toggleEffect={() => toggleEffect("autoWah")}
+            changeEffectWetValue={this.changeEffectWetValue}
+            changeAutoWahValue={this.changeAutoWahValue}
+          />
+          <Vibrato
+            {...this.state.vibrato}
+            toggleEffect={() => toggleEffect("vibrato")}
+            changeEffectWetValue={this.changeEffectWetValue}
+            changeVibratoValue={this.changeVibratoValue}
           />
         </div>
       </div>
