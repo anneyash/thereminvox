@@ -1,11 +1,14 @@
 .effectsBoard {
   display: flex;
+  padding: 60px;
 }
 
 .Effect {
+  background-color: #ffffff;
   width: 300px;
   padding: 20px;
-  border: 1px solid blue;
+  border: 2px solid #1b4793;
+  border-radius: 14px;
 
   h1,
   h2,
