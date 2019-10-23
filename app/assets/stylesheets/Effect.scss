@@ -4,11 +4,15 @@
 }
 
 .Effect {
-  background-color: #ffffff;
-  width: 300px;
+  background-color: #ffbbbb;
+  width: 350px;
+  height: 275px;
   padding: 20px;
-  border: 2px solid #1b4793;
+  border: 2px solid #ffbbbb;
   border-radius: 14px;
+  margin-left: 15px;
+  margin-right: 15px;
+  box-shadow: 10px 10px 1px #a53424;
 
   h1,
   h2,
@@ -18,7 +22,7 @@
   }
 
   .controlsContainer {
-    padding: 10px 0 40px;
+    padding: 5px 0 25px;
 
     .controlRow {
       padding: 15px 0;

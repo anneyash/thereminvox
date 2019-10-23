@@ -27,7 +27,7 @@ export default class Distortion extends React.Component {
 
         <div className="controlsContainer">
           <div className="controlsRow">
-            <h2>Wet</h2>
+            <h2></h2>
 
             <Slider
               name={name}
@@ -38,7 +38,7 @@ export default class Distortion extends React.Component {
             />
           </div>
           <div className="controlsRow">
-            <h2>Distortion</h2>
+            <h2></h2>
             <Slider
               name={name}
               min="0"

@@ -495,25 +495,21 @@ export default class Synth extends React.Component {
 
     return (
       <div>
-        Toggle Loop1
         <PlaySwitch
           name="play"
           value={loop1.on}
           handleToggleClick={() => this.toggleLoop("loop1")}
         />
-        Toggle Loop2
         <PlaySwitch
           name="play"
           value={loop2.on}
           handleToggleClick={() => this.toggleLoop("loop2")}
         />
-        Toggle Loop3
         <PlaySwitch
           name="play"
           value={loop3.on}
           handleToggleClick={() => this.toggleLoop("loop3")}
         />
-        Toggle Loop4
         <PlaySwitch
           name="play"
           value={loop4.on}
