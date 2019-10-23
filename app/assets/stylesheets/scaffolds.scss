@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #f15a42;
   color: #333;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -7,7 +7,17 @@ body {
   line-height: 18px;
 }
 
-p, ol, ul, td {
+.bg {
+  height: 100%;
+  width: 100%;
+  background: url("../images/background.jpg");
+  border: 2px solid black;
+}
+
+p,
+ol,
+ul,
+td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -41,7 +51,8 @@ td {
 }
 
 div {
-  &.field, &.actions {
+  &.field,
+  &.actions {
     margin-bottom: 10px;
   }
 }
