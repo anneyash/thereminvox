@@ -10,7 +10,7 @@ body {
 .bg {
   height: 100%;
   width: 100%;
-  background: url("../images/background.jpg");
+  background: url("/Users/anna/hseadc2017_thereminvox/app/assets/images/background.jpg");
   border: 2px solid black;
 }
 
@@ -73,6 +73,16 @@ div {
   padding: 7px 7px 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
+
+  h1 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: #c00;
+    color: #fff;
+  }
 
   h2 {
     text-align: left;
