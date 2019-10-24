@@ -4,6 +4,7 @@ import PlaySwitch from "../PlaySwitch";
 import ToggleSwitch from "../ToggleSwitch";
 import Slider from "../Slider";
 import Knob from "../Knob";
+import ButtonSet from "../ButtonSet";
 
 export default class Distortion extends React.Component {
   constructor(props) {
